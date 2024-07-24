@@ -1,13 +1,10 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": "/Users/mcampos354/Desktop/personal/porfolio.dev",
+ "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+      "@/components/*": ["src/components/*"],
+      "@/layouts/*": ["src/layouts/*"]
+    }
   }
 }
