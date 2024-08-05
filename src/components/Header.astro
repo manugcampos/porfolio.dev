@@ -1,30 +1,30 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
-import { t } from "i18next";
-
+import ThemeToggle from './ThemeToggle.astro';
+import { t } from 'i18next';
+import { LanguageSelector } from 'astro-i18next/components';
 
 const navItems = [
   {
-    title: t("experience_item"),
-    label: "experiencia",
-    url: "/#experiencia",
+    title: t('experience_item'),
+    label: 'experiencia',
+    url: '/#experiencia'
   },
   {
-    title: t("projects"),
-    label: "proyectos",
-    url: "/#proyectos",
+    title: t('projects'),
+    label: 'proyectos',
+    url: '/#proyectos'
   },
   {
-    title: t("about_me"),
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: t('about_me'),
+    label: 'sobre-mi',
+    url: '/#sobre-mi'
   },
   {
-    title: t("contact"),
-    label: "contacto",
-    url: "mailto:contactomanuelgutierrez@gmail.com",
-  },
-]
+    title: t('contact'),
+    label: 'contacto',
+    url: 'mailto:contactomanuelgutierrez@gmail.com'
+  }
+];
 ---
 
 <header
@@ -45,49 +45,54 @@ const navItems = [
       ))
     }
     <ThemeToggle />
+    <LanguageSelector
+      showFlag={true}
+      languageMapping={{ en: 'English' }}
+      class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400 cursor-pointer bg-inherit"
+    />
   </nav>
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+  document.addEventListener('astro:page-load', () => {
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('header nav a');
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+            if (item.getAttribute('aria-label') == entry.target.id) {
+              item.classList.add('text-yellow-500');
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove('text-yellow-500');
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    })
+      rootMargin: '0px',
+      threshold: 0.3
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect()
+      if (document.visibilityState === 'hidden') {
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>

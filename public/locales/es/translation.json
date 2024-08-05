@@ -14,7 +14,7 @@
   "bcnc_experience": "Trabajo con tecnologías de micro-frontend en un banco líder europeo, utilizando React con TypeScript, colaborando en un equipo multidisciplinar.",
   "blumii_experience" : "Desarrollo de diferentes herramientas web y móviles con tecnologías como .Net, Vanilla JS, Angular y SQL Server. Etapa fundamental en mi carrera de la cual aprendí mucho y trabajé en proyectos de gran escala tales como el Pasaporte Covid.",
   "escode_title" : "Escode - Redefiniendo el Software Escrow. Un producto del Grupo NCC",
-  "escode_description" : "Escode is a SaaS platform that redefines the way software escrow is done. Its secure hosted solution provides a safe and reliable way to protect your software assets.",
+  "escode_description": "Escode es una plataforma SaaS que redefine la forma en que se realiza el depósito de software. Su solución alojada de forma segura proporciona una manera segura y confiable de proteger tus activos de software. Actualmente, estoy trabajando en la parte del Frontend, asegurando una experiencia de usuario intuitiva y sin problemas.",
   "bot_title" :"El Bot Inteligente",
   "bot_description" :"Un bot de Telegram diseñado para estudiantes, que extrae información de un PDF adjunto enviado al bot y genera archivos de audio a partir del texto contenido en el PDF.",
   "code" : "Código",
